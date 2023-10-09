@@ -8,13 +8,15 @@ class ConnectWalletButton extends StatelessWidget {
   ConnectWalletButton({Key? key, required this.solanaClient}) : super(key: key);
 
   String pubKey = "enter your pub key";
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () async {
         // Request wallet connection
-        final connected = await solanaClient.rpcClient.getAccountInfo(pubKey);
-        if (connected != null) {
+        final accountinfo = await solanaClient.rpcClient.getAccountInfo(pubKey);
+
+        if (accountinfo != null) {
           // Wallet is connected, navigate to the wallet screen
           Navigator.push(
             context,
@@ -24,7 +26,7 @@ class ConnectWalletButton extends StatelessWidget {
           // Wallet connection failed or was canceled
         }
       },
-      child: Text('Connect Wallet'),
+      child: Text("Your account info"),
     );
   }
 }

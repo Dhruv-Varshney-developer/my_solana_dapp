@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:solana/solana.dart';
 import 'package:solana_mobile_client/solana_mobile_client.dart';
 import 'wallet_screen.dart'; // Import other screens as needed
-import 'package:my_solana_dapp/widgets/connect_wallet_button.dart';
+import 'package:my_solana_dapp/widgets/get_account_info.dart';
 
 class HomeScreen extends StatefulWidget {
   final SolanaClient solanaClient;
